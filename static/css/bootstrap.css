@@ -164,6 +164,7 @@ input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
+
 fieldset {
   padding: .35em .625em .75em;
   margin: 0 2px;
@@ -1095,6 +1096,7 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+    border-radius:10px;
 }
 a {
   color: #337ab7;

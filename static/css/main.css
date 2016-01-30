@@ -84,6 +84,11 @@
     text-decoration: none;
 }
 
+.sidebar-nav button:hover {
+    display: block;
+    text-align: center;
+}
+
 .sidebar-nav > .sidebar-brand {
     height: 65px;
     font-size: 18px;
@@ -100,6 +105,7 @@
 .sidebar-nav > .sidebar-brand a {
     color: #999999;
 }
+ 
 
 .right-nav > .right-brand a {
     color: #999999;
@@ -117,4 +123,8 @@
 
 #right-wrapper {
     width: 250px;
+}
+
+input[type= text]{
+  border-radius:10px;
 }
