@@ -10,6 +10,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="/static/fonts/font-awesome-4.5.0/css/font-awesome.min.css">
+    
     <script src="https://use.fonticons.com/c00d0d0e.js"></script>
 
     <title>Make Twitter Great Again</title>
@@ -36,6 +42,20 @@
         <li>{{n}}</li>
         {% endfor %}
       </ul>
+        <div class="row">
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+</div>
     </div>
     <!-- /#top-bar -->
 
@@ -49,9 +69,13 @@
                     </a>
                 </li>
                 <li>
-                  <form method="POST">
-                    <input type="text" name="search" placeholder="Enter a Topic"/>
-                      <button type="submit" class="btn-primary" name="submit" placeholder="Submit">Search</button>
+                  <form method="POST" >
+                    <input class="form-control" type="text" name="search" placeholder="Enter a Topic"/>
+                      
+                          <button class="btn btn-primary btn-sm btn-block" type="submit" name="submit">
+                          Search</button>
+                      
+                      
                   </form>
                 </li>
 
