@@ -2,15 +2,12 @@
 <html lang="en">
 
 <head>
-    
-    
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <script src="https://use.fonticons.com/c00d0d0e.js"></script>
 
     <title>Make Twitter Great Again</title>
 
@@ -30,12 +27,7 @@
 
     <!-- Top Bar -->
     <div id = "top-wrapper">
-
-      <ul class="list-inline">
-        {% for n in keyword_list %}
-        <li>{{n}}</li>
-        {% endfor %}
-      </ul>
+      {{ keywords }}
     </div>
     <!-- /#top-bar -->
 
@@ -44,20 +36,16 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
-                    <a href="#">
+                    <a href="{{"index.html"}}">
                         Make Twitter Great Again
                     </a>
                 </li>
                 <li>
                   <form method="POST">
                     <input type="text" name="search" placeholder="Enter a Topic"/>
-                    <br>
                     <button type="submit" class="btn-primary" name="submit" placeholder="Submit"/>
                   </form>
                 </li>
-                <button>
-                    Search
-                </button>
 
             </ul>
         </div>
@@ -72,11 +60,11 @@
     <!-- Sidebar Right -->
     <div id = "right-wrapper">
         <ul class = "right-nav">
-            <ul class = "right-brand">
+            <li class = "right-brand">
             <a href = "#">
                 Analytics
                 </a>
-            </ul>
+            </li>
         </ul>
     </div>
     <!-- /#sidebar-right -->

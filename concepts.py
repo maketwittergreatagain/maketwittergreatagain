@@ -23,12 +23,12 @@ def getConcepts(seed):
         print(json.dumps(job_status, indent=2))
 
     if job_status['status'] == 'done':
-        new_html = ""
+        new_html = []
         results = concept_expansion.get_results(job_id)
         #print(json.dumps(results, indent=2))
         json_dict = json.loads(json.dumps(results))
         for domain_dict in json_dict['return_seeds']:
-            new_html += "<li>%s</li>\n" % domain_dict['result']
+            new_html.append(domain_dict['result']) #+= "%s\n" % domain_dict['result']
         return new_html
 
 #getConcepts(seed)
