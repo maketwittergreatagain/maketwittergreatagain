@@ -84,15 +84,22 @@
     text-decoration: none;
 }
 
-.sidebar-nav button:hover {
-    display: block;
+.sidebar-nav form input button:hover {
     text-align: center;
+    width: auto;
+    align-items: center;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    display: inline-block;
 }
 
 .sidebar-nav > .sidebar-brand {
     height: 65px;
     font-size: 18px;
     line-height: 60px;
+    align-items: center;
 }
 
 .right-nav > .right-brand {
@@ -125,6 +132,3 @@
     width: 250px;
 }
 
-input[type= text]{
-  border-radius:10px;
-}
