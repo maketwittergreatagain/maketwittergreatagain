@@ -17,7 +17,7 @@ body {
     height: 100%;
     margin-left: -250px;
     overflow-y: auto;
-    background: #000;
+    background: #d2e5f3;
     -webkit-transition: all 0.8s ease;
     -moz-transition: all 0.8s ease;
     -o-transition: all 0.8s ease;
@@ -28,7 +28,7 @@ body {
     left: 250px;
     height: 100vh;
     margin-left: 1000px;
-    background: #000;
+    background: #d2e5f3;
     overflow-y: auto;
     -webkit-transition: all 1.5s ease;
     -moz-transition: all 1.5s ease;
@@ -38,7 +38,7 @@ body {
 }
 
 #top-wrapper {
-    background: #000;
+    background: #d2e5f3;
     height: 50px;
     text-align: center;
     color: #999999;
@@ -82,19 +82,19 @@ body {
     line-height: 40px;
 }
 
-.right-nav li a {
+.right-nav ul a {
     display: block;
     text-decoration: none;
-    color: #999999;
+    color: #175888;
 }
 
 .sidebar-nav li a:hover {
     text-decoration: none;
-    color: #fff;
+    color: #175888;
     background: rgba(255,255,255,0.2);
 }
 
-.right-nav li a:hover {
+.right-nav ul a:hover {
     text-decoration: none;
     color: #fff;
     background: rgba(255,255,255,0.2);
@@ -105,8 +105,8 @@ body {
     text-decoration: none;
 }
 
-.right-nav li a:active,
-.right-nav li a:focus {
+.right-nav ul a:active,
+.right-nav ul a:focus {
     text-decoration: none;
 }
 
@@ -124,11 +124,11 @@ body {
 }
 
 .sidebar-nav > .sidebar-brand a {
-    color: #999999;
+    color: #175888;
 }
 
 .right-nav > .right-brand a {
-    color: #999999;
+    color: #175888;
 }
 
 .sidebar-nav > .sidebar-brand a:hover {
@@ -145,9 +145,6 @@ body {
         width: 250px;
     }
 
-    #wrapper.toggled #sidebar-wrapper {
-        width: 0;
-    }
 
 ::-webkit-input-placeholder {
    text-align: center;
