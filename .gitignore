@@ -64,3 +64,4 @@ target/
 # Other
 *~
 *#
+.DS_Store
