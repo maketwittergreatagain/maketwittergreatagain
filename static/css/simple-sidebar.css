@@ -23,10 +23,10 @@
     margin-left: -250px;
     overflow-y: auto;
     background: #000;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+    -webkit-transition: all 0.8s ease;
+    -moz-transition: all 0.8s ease;
+    -o-transition: all 0.8s ease;
+    transition: all 0.8s ease;
 }
 
 #right-wrapper {
@@ -35,7 +35,22 @@
     margin-left: 1000px;
     background: #000;
     overflow-y: auto;
-    
+    -webkit-transition: all 1.5s ease;
+    -moz-transition: all 1.5s ease;
+    -o-transition: all 1.5s ease;
+    transition: all 1.5s ease;
+}
+
+#top-wrapper {
+    background: #000;
+    height: 30px;
+    text-align: center;
+    color: #999999;
+    width: 100%;
+    clear: both;
+    position: relative;
+    margin-top: 0;
+    vertical-align: top;
     
 }
 
@@ -55,12 +70,6 @@
 .sidebar-nav li {
     text-indent: 20px;
     line-height: 40px;
-}
-
-.sidebar-nav li a {
-    display: block;
-    text-decoration: none;
-    color: #999999;
 }
 
 .right-nav li a {
@@ -101,6 +110,7 @@
     height: 65px;
     font-size: 18px;
     line-height: 60px;
+    text-align: center;
 }
 
 .sidebar-nav > .sidebar-brand a {
@@ -125,3 +135,22 @@
         width: 250px;
     }
 
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+
+::-webkit-input-placeholder {
+   text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   text-align: center;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   text-align: center;  
+}
+
+:-ms-input-placeholder {  
+   text-align: center; 
+}
