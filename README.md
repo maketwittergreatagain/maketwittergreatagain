@@ -2,8 +2,9 @@
 It's time to make Twitter great again.
 
 # Installation
-To install, simply use `pip` or `easy_install`:
+To install, simply use `pip`:
 
+## CLARIFAI
 ```bash
-$ pip install --upgrade google-api-python-client
+$ pip install clarifai
 ```

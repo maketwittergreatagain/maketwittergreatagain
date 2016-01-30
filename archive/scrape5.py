@@ -2,6 +2,8 @@ import lxml.html
 import requests
 import urllib
 
+
+#https://www.google.com/search?q=google+images&espv=2&biw=1440&bih=805&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjMsfjk09HKAhXL2R4KHSjmDM0Q_AUIBigB#tbm=isch&q=sports&chips=q:sports,g_1:football,g_1:messi
 # The base url - after we specify the page number which will replace that %s, we have the link that we will be scraping
 link = 'https://www.google.com/search?tbm=isch&q=%s'
 # We're going to iterate for the first ten pages of usnews for national-university rankings
