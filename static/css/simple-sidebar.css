@@ -14,10 +14,6 @@
     transition: all 0.5s ease;
 }
 
-#wrapper.toggled {
-    padding-left: 250px;
-}
-
 #sidebar-wrapper {
     z-index: 1000;
     position: fixed;
@@ -33,32 +29,14 @@
     transition: all 0.5s ease;
 }
 
-#sidebarRight-wrapper {
-    float: right;
+#right-wrapper {
     left: 250px;
     height: 100vh;
-    margin-right: -250px;
+    margin-left: 1000px;
     background: #000;
     overflow-y: auto;
-    padding-right: 250px;
     
     
-}
-
-
-#wrapper.toggled #sidebar-wrapper {
-    width: 250px;
-}
-
-#page-content-wrapper {
-    width: 100%;
-    position: absolute;
-    padding: 15px;
-}
-
-#wrapper.toggled #page-content-wrapper {
-    position: absolute;
-    margin-right: -250px;
 }
 
 /* Sidebar Styles */
