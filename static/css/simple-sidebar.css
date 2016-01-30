@@ -1,18 +1,13 @@
-/*!
- * Start Bootstrap - Simple Sidebar HTML Template (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
-
 /* Toggle Styles */
 
-#wrapper {
-    padding-left: 0;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+body {
+    overflow: hidden;
 }
+
+#div {
+    overflow: hidden;
+}
+
 
 #sidebar-wrapper {
     z-index: 1000;
@@ -39,6 +34,7 @@
     -moz-transition: all 1.5s ease;
     -o-transition: all 1.5s ease;
     transition: all 1.5s ease;
+    overflow-x: hidden;
 }
 
 #top-wrapper {
@@ -51,6 +47,20 @@
     position: relative;
     margin-top: 0;
     vertical-align: top;
+    overflow-x: hidden;
+}
+
+#tweet-wrapper {
+    width: 750px;
+    color: #999999;
+    height: 100%;
+    position: absolute;
+    z-index: auto;
+    white-space: nowrap;
+    vertical-align: middle;
+    clear: both;
+    margin-left: 250px;
+    overflow: hidden;
     
 }
 
