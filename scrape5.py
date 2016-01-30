@@ -1,44 +1,22 @@
-# HTML parser
-# http://lxml.de/lxmlhtml.html
 import lxml.html
-
-# Extensible library for opening URLs
-# https://docs.python.org/2/library/urllib2.html
 import requests
-import urllib2
-from bs4 import BeautifulSoup
-"""
-url="https://www.nytimes.com"
-request = urllib2.urlopen(url)
-result = request.read()
-soup = BeautifulSoup(result,'html.parser')
-for a in soup.find_all('h3'):
-    print a
-"""
+import urllib
 
-# Base URL
-url = 'https://www.google.com/search?tbm=isch&q=%s'
-
+# The base url - after we specify the page number which will replace that %s, we have the link that we will be scraping
+link = 'https://www.google.com/search?tbm=isch&q=%s'
 # We're going to iterate for the first ten pages of usnews for national-university rankings
-# open_link = 'http://colleges.usnews.rankingsandreviews.com/best-colleges/rankings/national-universities/data/page+1', 'http://colleges.usnews.rankingsandreviews.com/best-colleges/rankings/national-universities/data/page+2', etc. as a result of this line
-#def main(query):
-    #open_link = link % query
-    # print open_link
+def main(query):
+    open_link = link % query
+    print open_link
     # Open up the url and store the response.
     # The response typically contains a response code (200 signals a good response; and there are a whole list of bad responses like 404 or 300). Afterwards we read the response which gives us the page source. This will look like this: view-source:http://colleges.usnews.rankingsandreviews.com/best-colleges/rankings/national-universities/data/page+1
-    #response = requests.get(open_link)
-    #page_text = response.text
+    response = requests.get(open_link)
+    page_text = response.text
     # Response is currently just text, we need to actually convert it into something parsable. To do this we call lxml's library and convert it from a string
-    # doc = lxml.html.fromstring(page_text)
-    #doc = lxml.html.parse(page_text)
+    doc = lxml.html.fromstring(page_text)
+
     # Now comes the tricky part. We want to search and iterate over all the rows of the table. To do this, I typically go into the web browser and look for where exactly my data is. If I look around, I see that it's stored within a <table> tag. And if I keep going into that tag, I see that all of the rows are <tr> tags.
-"""
-    request = urllib2.urlopen(open_link)
-    result = request.read()
-    soup = BeautifulSoup(result,'html.parser')
-    for a in soup.find_all('span'):
-        print a
-"""
+
     # xpath let's you specify a string which comes in the following format
     # xpath("//<tag_name>//<tag_name2>//<tag_name3>")
     # You can also specify things for each tag, like any attributes it has
@@ -54,17 +32,13 @@ url = 'https://www.google.com/search?tbm=isch&q=%s'
     #
     # The notation [1:] means that we want everything from the first element onward
     # i.e. omit the zeroth element
-    #print open_link
-    #print doc
-
-"""
-    for row in page_text.xpath("//div[@class='_Hyg']//a[@class='chip']")[0:]:
+    print page_text
+    for row in doc.xpath("//div[@class='_Hyg']//a[@class='chip']")[0:]:
         # name is in the 2nd column, and tuition in the 3rd (columns start at zero/are zero indexed)
         category = row.xpath("span[@class='sq']")[0].text_content().strip()
         print "The category is: "
         print category
         print "============================="
-"""
 
 
 # Things to keep in mind
@@ -82,11 +56,6 @@ url = 'https://www.google.com/search?tbm=isch&q=%s'
 #
 #
 #
-
-def main(query):
-    content = urllib.urlopen(url).read()
-    doc = fromstring(content)
-    doc.make_links_absolute(url)
 
 if __name__ == '__main__':
   main("sports")

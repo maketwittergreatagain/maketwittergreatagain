@@ -9,8 +9,13 @@ def search(query):
   result = request.read()
   soup = BeautifulSoup(result)
   letters = soup.find_all("span", class_="sq")
+  lobbying = {}
+  for element in letters:
+    lobbying[element.a.get_text()] = {}
+    letters[0].a["href"]
 
   for category in letters:
+
     print "Category: %s/n" % category
 
 search("music")
