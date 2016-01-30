@@ -7,11 +7,10 @@ app = Flask(__name__)
 def index():
     if (request.method == "GET"):
         return render_template("index.html")
-    else:
+    elif (request.form['search'] != ""):
         query = request.form['search']
-        #query = "sports"
         results = concepts.getConcepts(query)
-        return render_template("index.html", keywords=results)
+        return render_template("index.html", keyword_list=results)
 
 
 if __name__=="__main__":
