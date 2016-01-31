@@ -64,13 +64,19 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
-                    <a href="#">
+                    
                         Make Twitter Great Again
-                    </a>
+                    
                 </li>
+                <div class="github">
+                    <a href="http://www.github.com/maketwittergreatagain" target="_blank">
+                <img src="/static/images/GitHub-Mark/PNG/GitHub-Mark-Light-32px.png"/>
+                        </a>
+                </div>
+                <br>
                 <li>
                   <form id="category" method="POST" >
-                    <input class="form-control" type="text" name="search" placeholder="Enter a Topic"/>
+                    <input class="form-control" type="text" name="search" placeholder="Enter a Topic" />
                       
                           <button class="btn btn-primary btn-sm btn-block" type="submit" name="submit">
                           Search</button>
@@ -119,7 +125,7 @@
         (function($){
     $('#category').submit(function(e){
         var val = $(this).find('.form-control').val();
-        $('ul.list').append('<ul><button type="button" class="btn btn-default btn-sm">' + val + '</button></ul>');
+        $('ul.list').append('<ul><h3><input type="checkbox" aria-label="..."><span class="label label-default">' + val + '</span></h3></ul>');
         e.preventDefault();
     });
 })(jQuery);
