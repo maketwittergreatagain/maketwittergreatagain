@@ -34,4 +34,4 @@ def getConcepts(seed):
         return new_html
 
 #getConcepts(seed)
-print getConcepts("women in tech")
+#print getConcepts("women in tech")
