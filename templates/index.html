@@ -103,6 +103,15 @@
         
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
 <script type="text/javascript">
+    
+    
+$(document).ready(function(){
+    $('body').fadeIn(2000);
+    $('#sidebar-wrapper').fadeIn(2500);
+    $('#right-wrapper').fadeIn(2500);
+});
+
+    
         
         var auto_refresh = setInterval(function () {
     $('#text-wrapper').fadeOut('slow', function() {
@@ -111,6 +120,8 @@
         });
     });
 }, 15000); // refresh every 15000 milliseconds
+    
+    
         </script>
 
 

@@ -2,9 +2,10 @@
 
 body {
     overflow: hidden;
+    display: none;
 }
 
-div {
+#main {
     overflow: hidden;
 }
 
@@ -22,6 +23,8 @@ div {
     -moz-transition: all 0.8s ease;
     -o-transition: all 0.8s ease;
     transition: all 0.8s ease;
+    overflow: hidden;
+    display: none;
 }
 
 #right-wrapper {
@@ -35,6 +38,8 @@ div {
     -o-transition: all 1.5s ease;
     transition: all 1.5s ease;
     overflow-x: hidden;
+    overflow: hidden;
+    display: none;
 }
 
 #top-wrapper {

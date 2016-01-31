@@ -1,5 +1,9 @@
 /* Column Styles */
 
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
 
 #sidebar-wrapper {
     z-index: 1000;
@@ -82,12 +86,6 @@
 .right-nav li a:active,
 .right-nav li a:focus {
     text-decoration: none;
-}
-
-.bird {
-    left: 50px;
-    position: relative;
-    vertical-align: middle;
 }
 
 
