@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, session
-import concepts
+import concepts, search
 
 app = Flask(__name__)
 
