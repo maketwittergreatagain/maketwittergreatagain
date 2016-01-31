@@ -4,7 +4,7 @@
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
-    
+
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
 
@@ -34,49 +34,6 @@
     <link rel="icon" type="image/x-icon" href="../static/images/tweeter.png" />
 
     <!-- Scripts -->
-
-
-    <script type="text/javascript">
-      var $SCRIPT_ROOT = {{ request script_root|tojson|safe }};
-    </script>
-
-    <script type="text/javascript">
-      $(function() {
-        $(".btn btn-primary btn-sm pull-right").click(function() {
-             $.ajax({
-                type: "GET",
-                url: $SCRIPT_ROOT + "/echo/",
-                contentType: "application/json; charset=utf-8",
-                data: { echoValue: $('input[name="search"]').val() },
-                success: function(data) {
-                    $('#tweet-wrapper').text(data.value);
-                }
-            });
-        });
-      });
-    </script>
-
-    <script type="text/javascript">
-
-
-      $(function() {
-        $(".btn btn-primary btn-sm pull-right").click(function() {
-             $.ajax({
-                type: "GET",
-                url: $SCRIPT_ROOT + "/echo/",
-                contentType: "application/json; charset=utf-8",
-                data: { echoValue: $('input[name="search"]').val() },
-                success: function(data) {
-                    $('#tweet-wrapper').text(data.value);
-                },
-                error: function(jqXHR, textStatus, errorThrown) {
-                    alert(errorThrown);
-                }
-            });
-        });
-      });
-
-    </script>
 
     <script type="text/javascript">
 
@@ -181,7 +138,7 @@
 
     <!-- Javascript/JQuery (yeah, i know, it's better to put it in it's own file) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-        
+
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 
