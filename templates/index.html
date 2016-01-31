@@ -28,14 +28,14 @@
     <link href="../static/css/simple-sidebar.css" rel="stylesheet">
 
     <link rel="icon" type="image/x-icon" href="../static/images/tweeter.png" />
-    
+
     <!-- Scripts -->
-    
-    
+
+
     <script type="text/javascript">
       var $SCRIPT_ROOT = {{ request script_root|tojson|safe }};
     </script>
-    
+
     <script type="text/javascript">
       $(function() {
         $(".btn btn-primary btn-sm pull-right").click(function() {
@@ -47,20 +47,20 @@
                 success: function(data) {
                     $('#tweet-wrapper').text(data.value);
                 }
-            });     
+            });
         });
       });
     </script>
-    
+
     <script type="text/javascript">
-        
-    
+
+
       $(function() {
         $(".btn btn-primary btn-sm pull-right").click(function() {
              $.ajax({
                 type: "GET",
                 url: $SCRIPT_ROOT + "/echo/",
-                contentType: "application/xml; charset=utf-8",
+                contentType: "application/json; charset=utf-8",
                 data: { echoValue: $('input[name="search"]').val() },
                 success: function(data) {
                     $('#tweet-wrapper').text(data.value);
@@ -68,14 +68,14 @@
                 error: function(jqXHR, textStatus, errorThrown) {
                     alert(errorThrown);
                 }
-            });     
+            });
         });
       });
-   
+
     </script>
-    
+
     <script type="text/javascript">
-        
+
     $('#search').focusout(function(){
       var search=$('#search').val()
       $.ajax({
@@ -94,7 +94,7 @@
 
 });
     </script>
-    
+
 
 </head>
 <body>
@@ -154,7 +154,7 @@
         <!-- /#sidebar-wrapper -->
 
         <!-- Tweet Box -->
-    <div id = "tweet-wrapper"> 
+    <div id = "tweet-wrapper">
       {% for tweet in tweets %}
       {{ tweet }}
       {% endfor %}
@@ -178,7 +178,7 @@
     <!-- Javascript/JQuery (yeah, i know, it's better to put it in it's own file) -->
 
     <script type="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
-        
+
     <script type="text/javascript">
 
 
@@ -188,9 +188,9 @@
             $('#right-wrapper').fadeIn(2500);
             $('#right-wrapper').hide('slide',{direction:'right'},1000);
         });
-        
-        
-        
+
+
+
 
         (function($){
     $('#category').submit(function(e){
@@ -199,8 +199,8 @@
         e.preventDefault();
         });
     })(jQuery);
-    
-        
+
+
 
         var auto_refresh = setInterval(function () {
             $('#text-wrapper').fadeOut('slow', function() {
@@ -210,11 +210,11 @@
                 System.out.println("refreshed");
             });
         }, 15000); // refresh every 1000 milliseconds
-        
+
 
 
         </script>
-        
+
 
 
     </div>

@@ -16,6 +16,7 @@ def index():
             return render_template("index.html", keyword_list=results, query=query, tweets=tweets)
     except:
         abort(404)
+        
 if __name__=="__main__":
     app.debug = True
     #app.secret_key = "no way"
