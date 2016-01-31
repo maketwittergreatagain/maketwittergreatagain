@@ -4,6 +4,9 @@
 @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 
+.btn btn-primary btn-sm {
+    float: right;
+}
 
 #sidebar-wrapper {
     z-index: 1000;

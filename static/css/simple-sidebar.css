@@ -15,6 +15,11 @@ body {
     margin-right: auto;
 }
 
+.list {
+    position: relative;
+    width: 100%;
+}
+
 
 #sidebar-wrapper {
     z-index: 1000;
@@ -172,3 +177,4 @@ body {
 :-ms-input-placeholder {  
    text-align: center; 
 }
+
