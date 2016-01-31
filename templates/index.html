@@ -100,6 +100,18 @@
         </ul>
     </div>
     <!-- /#sidebar-right -->
+        
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
+<script type="text/javascript">
+        
+        var auto_refresh = setInterval(function () {
+    $('#text-wrapper').fadeOut('slow', function() {
+        $(this).load('/echo/json/', function() {
+            $(this).fadeIn('slow');
+        });
+    });
+}, 15000); // refresh every 15000 milliseconds
+        </script>
 
 
     </div>

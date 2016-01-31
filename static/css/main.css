@@ -84,6 +84,11 @@
     text-decoration: none;
 }
 
+.bird {
+    left: 50px;
+    position: relative;
+    vertical-align: middle;
+}
 
 
 .sidebar-nav > .sidebar-brand {
