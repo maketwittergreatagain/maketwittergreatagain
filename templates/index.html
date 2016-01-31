@@ -63,12 +63,15 @@
 
     <!-- Top Bar -->
     <div id = "top-wrapper">
-
-      <ul class="list-inline">
+<!--
+      <ul onclick="" class="list-inline">
         {% for n in keyword_list %}
-        <li>{{n}}</li>
+        <li>{{ n }}</li>
         {% endfor %}
       </ul>
+-->
+    <img style="width: 100%" src="../static/images/suggestions.png" />
+    <br>
     </div>
     <!-- /#top-bar -->
 
@@ -116,9 +119,12 @@
 
         <!-- Tweet Box -->
     <div id = "tweet-wrapper">
+<!--
       {% for tweet in tweets %}
       {{ tweet }}
       {% endfor %}
+    -->
+    <img src="../static/images/twitter_sports.png"/>
     </div>
     <!-- /#tweet-box -->
 
@@ -156,8 +162,6 @@
         });
 
 
-
-
         (function($){
     $('#category').submit(function(e){
         var val = $(this).find('.form-control').val();
@@ -165,7 +169,6 @@
         e.preventDefault();
         });
     })(jQuery);
-
 
 
         var auto_refresh = setInterval(function () {

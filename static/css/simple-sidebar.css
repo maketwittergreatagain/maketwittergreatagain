@@ -78,7 +78,7 @@ body {
     clear: both;
     margin-left: 360px;
     overflow: hidden;
-    
+
 }
 
 /* Sidebar Styles */
@@ -168,14 +168,13 @@ body {
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   text-align: center;  
+   text-align: center;
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-   text-align: center;  
+   text-align: center;
 }
 
-:-ms-input-placeholder {  
-   text-align: center; 
+:-ms-input-placeholder {
+   text-align: center;
 }
-
