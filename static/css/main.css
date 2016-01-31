@@ -4,9 +4,6 @@
 @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 
-.btn btn-primary btn-sm {
-    float: right;
-}
 
 #sidebar-wrapper {
     z-index: 1000;
@@ -27,10 +24,10 @@
     height: 100;
     overflow-y: auto;
     background: #000;
-    width: 33%;
-    right: 250px;
+    width: 53%;
+    margin-right: 0;
     z-index: 1000;
-    position: fixed;
+    position: relative;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -51,7 +48,7 @@
 
 .right-nav {
     top: 0;
-    width: 250px;
+    width: 350px;
     margin: 0;
     padding: 0;
     list-style: none;
