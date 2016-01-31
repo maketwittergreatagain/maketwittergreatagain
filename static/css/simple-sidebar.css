@@ -9,6 +9,12 @@ body {
     overflow: hidden;
 }
 
+.github {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 #sidebar-wrapper {
     z-index: 1000;
