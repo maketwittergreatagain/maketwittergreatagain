@@ -10,6 +10,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <link href="/app.py">
+    <link href="/auth.py">
+    <link href="/concepts.py">
+    <link href="/twitter.py">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -29,6 +33,70 @@
     <link href="../static/css/simple-sidebar.css" rel="stylesheet">
 
     <link rel="icon" type="image/x-icon" href="../static/images/tweeter.png" />
+    
+    <!-- Scripts -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    
+    <script type="text/javascript">
+      var $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+    </script>
+    
+    <script type="text/javascript">
+      $(function() {
+        $(".btn btn-primary btn-sm pull-right").click(function() {
+             $.ajax({
+                type: "GET",
+                url: $SCRIPT_ROOT + "/echo/",
+                contentType: "application/json; charset=utf-8",
+                data: { echoValue: $('input[name="search"]').val() },
+                success: function(data) {
+                    $('#tweet-wrapper').text(data.value);
+                }
+            });     
+        });
+      });
+    </script>
+    
+    <script type="text/javascript">
+      $(function() {
+        $(".btn btn-primary btn-sm pull-right").click(function() {
+             $.ajax({
+                type: "GET",
+                url: $SCRIPT_ROOT + "/echo/",
+                contentType: "application/xml; charset=utf-8",
+                data: { echoValue: $('input[name="search"]').val() },
+                success: function(data) {
+                    $('#tweet-wrapper').text(data.value);
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    alert(errorThrown);
+                }
+            });     
+        });
+      });
+    </script>
+    
+    <script type="text/javascript">
+        
+    $('#search').focusout(function(){
+      var search=$('#search').val()
+      $.ajax({
+            url: '/index',
+            data: $('form').serialize(),
+            type: 'POST',
+            success: function(response) {
+                //I need to some how be able to populate my table with the returned list;
+            },
+            error: function(error) {
+                alert(error);
+            }
+        });
+
+
+
+});
+    </script>
+    
 
 </head>
 <body>
@@ -70,8 +138,8 @@
                 </div>
                 <br>
                 <li>
-                  <form id="category" method="POST" >
-                    <input class="form-control" type="text" name="search" placeholder="Enter a Topic" />
+                  <form action ="/index" id="category" method="POST" role="form" >
+                    <input class="form-control" type="text" name="search" id=search placeholder="Enter a Topic" />
                     <br>
                         <button class="btn btn-primary btn-sm pull-right" type="submit" name="submit">
                           Search
@@ -88,7 +156,7 @@
         <!-- /#sidebar-wrapper -->
 
         <!-- Tweet Box -->
-    <div id = "tweet-wrapper">
+    <div id = "tweet-wrapper"> 
       {% for tweet in tweets %}
       {{ tweet }}
       {% endfor %}
@@ -112,6 +180,7 @@
     <!-- Javascript/JQuery (yeah, i know, it's better to put it in it's own file) -->
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
+        
     <script type="text/javascript">
 
 
@@ -128,7 +197,7 @@
         (function($){
     $('#category').submit(function(e){
         var val = $(this).find('.form-control').val();
-        $('ul.list').append("<ul><a href='#' class='list-group-item clearfix'><span class='pull-right'><button class='btn btn-xs btn-info' value='add'>ADD</button><button class='btn btn-xs btn-warning'><span class='glyphicon glyphicon-trash' value='remove'></span></button></span>" + val + '</a></ul>');
+        $('ul.list').append("<ul><a href='#' class='list-group-item clearfix'><span class='pull-right'><button class='btn btn-xs btn-info' value='add'>Hide</button><button class='btn btn-xs btn-warning'><span class='glyphicon glyphicon-trash' value='remove'></span></button></span>" + val + '</a></ul>');
         e.preventDefault();
         });
     })(jQuery);
@@ -140,8 +209,10 @@
                 $(this).load('/echo/json/', function() {
                     $(this).fadeIn('slow');
                 });
+                System.out.println("refreshed");
             });
-        }, 15000); // refresh every 15000 milliseconds
+        }, 15000); // refresh every 1000 milliseconds
+        
 
 
         </script>
