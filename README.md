@@ -15,6 +15,6 @@ $ pip install twython
 ```
 
 ## FLASK
-'''bash
+```bash
 $ pip install Flask
-'''
+```
