@@ -11,7 +11,7 @@ concept_expansion = ConceptExpansion(username=secret.WATSON_USERNAME,
 
 
 def getConcepts(seed):
-    job_id = concept_expansion.create_job(dataset='mtsamples', seeds=[seed]) 
+    job_id = concept_expansion.create_job(dataset='mtsamples', seeds=[seed])
     #print(json.dumps(job_id, indent=2))
 
     time.sleep(1)  # sleep for 5 seconds
@@ -25,10 +25,13 @@ def getConcepts(seed):
     if job_status['status'] == 'done':
         new_html = []
         results = concept_expansion.get_results(job_id)
-        #print(json.dumps(results, indent=2))
+        print(json.dumps(results, indent=2))
         json_dict = json.loads(json.dumps(results))
         for domain_dict in json_dict['return_seeds']:
+            print domain_dict
             new_html.append(domain_dict['result']) #+= "%s\n" % domain_dict['result']
+            print new_html
         return new_html
 
 #getConcepts(seed)
+print getConcepts("women in tech")

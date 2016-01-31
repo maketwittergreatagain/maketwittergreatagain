@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="/static/fonts/font-awesome-4.5.0/css/font-awesome.min.css">
+
+    <script src="https://use.fonticons.com/c00d0d0e.js"></script>
+
+    <title>Make Twitter Great Again</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="../static/css/main.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../static/css/simple-sidebar.css" rel="stylesheet">
+
+    <link rel="icon" type="image/x-icon" href="../static/images/tweeter.png" />
+
+</head>
+<body>
+    <div id = "main">
+
+    <!-- Top Bar -->
+    <div id = "top-wrapper">
+
+      <ul class="list-inline">
+        {% for n in keyword_list %}
+        <li>{{n}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <!-- /#top-bar -->
+
+
+        <!-- Sidebar Left -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+
+                        <img src = "/static/images/twitter04.png"/>
+
+                </li>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="github">
+                    <a href="http://www.github.com/maketwittergreatagain" target="_blank">
+                <img src="/static/images/GitHub-Mark/PNG/GitHub-Mark-Light-32px.png"/>
+                        </a>
+                </div>
+                <br>
+                <li>
+                  <form id="category" method="POST" >
+                    <input class="form-control" type="text" name="search" placeholder="Enter a Topic" />
+                    <br>
+                        <button class="btn btn-primary btn-sm pull-right" type="submit" name="submit">
+                          Search
+                        </button>
+                  </form>
+                </li>
+                <br>
+                <br>
+                <div class="results">
+                    <ul class="list"></ul>
+                </div>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Tweet Box -->
+    <div id = "tweet-wrapper">
+      {% for tweet in tweets %}
+      {{ tweet }}
+      {% endfor %}
+    </div>
+    <!-- /#tweet-box -->
+
+
+
+    <!-- Sidebar Right -->
+    <div id = "right-wrapper">
+        <ul class = "right-nav">
+            <ul class = "right-brand">
+            <a href = "#">
+                Analytics
+                </a>
+            </ul>
+        </ul>
+    </div>
+    <!-- /#sidebar-right -->
+
+    <!-- Javascript/JQuery (yeah, i know, it's better to put it in it's own file) -->
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
+    <script type="text/javascript">
+
+
+        $(document).ready(function(){
+            $('body').fadeIn(2000);
+            $('#sidebar-wrapper').fadeIn(2500);
+            $('#right-wrapper').fadeIn(2500);
+            $('#right-wrapper').hide('slide',{direction:'right'},1000);
+        });
+
+
+
+
+        (function($){
+    $('#category').submit(function(e){
+        var val = $(this).find('.form-control').val();
+        $('ul.list').append("<ul><a href='#' class='list-group-item clearfix'><span class='pull-right'><button class='btn btn-xs btn-info' value='add'>ADD</button><button class='btn btn-xs btn-warning'><span class='glyphicon glyphicon-trash' value='remove'></span></button></span>" + val + '</a></ul>');
+        e.preventDefault();
+        });
+    })(jQuery);
+
+        var auto_refresh = setInterval(function () {
+            $('#text-wrapper').fadeOut('slow', function() {
+                $(this).load('/echo/json/', function() {
+                    $(this).fadeIn('slow');
+                });
+            });
+        }, 15000); // refresh every 15000 milliseconds
+
+        $(document).ready(function(){
+          $("button").click(function(){
+            $("p").toggle();
+          });
+        });
+
+        </script>
+
+
+
+    </div>
+
+
+</body>
+</html>
