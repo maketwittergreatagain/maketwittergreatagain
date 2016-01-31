@@ -1,17 +1,3 @@
-# https://api.twitter.com/1.1/search/tweets.json?q=%40twitterapi
-"""
-import json
-import urllib2
-
-url = "https://api.twitter.com/1.1/search/tweets.json?q=%s"
-
-def search(query):
-    new_url =
-data = urllib2.urlopen(url)
-jsonx = json.load(data)
-print jsonx
-"""
-
 import re
 import requests
 
