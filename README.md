@@ -8,3 +8,8 @@ To install, simply use `pip`:
 ```bash
 $ pip install watson_developer_cloud
 ```
+
+## TWYTHON
+```bash
+$ pip install twython
+```
