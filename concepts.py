@@ -11,7 +11,7 @@ concept_expansion = ConceptExpansion(username=secret.WATSON_USERNAME,
 
 
 def getConcepts(seed):
-    job_id = concept_expansion.create_job(dataset='mtsamples', seeds=[seed]) #, label='medications')
+    job_id = concept_expansion.create_job(dataset='mtsamples', seeds=[seed]) 
     #print(json.dumps(job_id, indent=2))
 
     time.sleep(1)  # sleep for 5 seconds

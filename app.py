@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, session
-import concepts, twitter, secret, twitter2
+import concepts, twitter, secret
 
 app = Flask(__name__)
 
@@ -9,10 +9,10 @@ def index():
         return render_template("index.html")
     else:
         query = request.form['search']
-        tweets = twitter.
+        twitter_results = twitter.search(query)
+        tweets = twitter.get_embedded_tweets(twitter_results)
         results = concepts.getConcepts(query)
-        return render_template("index.html", keyword_list=results, query=query, tweets=tweets, htmls=html_list[:5])
-        html_list = twitter2.getEmbed()
+        return render_template("index.html", keyword_list=results, query=query, tweets=tweets)
 
 if __name__=="__main__":
     app.debug = True

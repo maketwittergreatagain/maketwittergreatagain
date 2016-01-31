@@ -66,8 +66,8 @@
 
         <!-- Tweet Box -->
     <div id = "tweet-wrapper">
-      {% for tweet_id in tweets %}
-      {{ html|safe }}
+      {% for tweet in tweets %}
+      {{ tweet }}
       {% endfor %}
     </div>
     <!-- /#tweet-box -->
