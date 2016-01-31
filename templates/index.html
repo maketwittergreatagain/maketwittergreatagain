@@ -2,18 +2,13 @@
 <html lang="en">
 
 <head>
-
-
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="/app.py">
-    <link href="/auth.py">
-    <link href="/concepts.py">
-    <link href="/twitter.py">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -35,10 +30,10 @@
     <link rel="icon" type="image/x-icon" href="../static/images/tweeter.png" />
     
     <!-- Scripts -->
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    
     
     <script type="text/javascript">
-      var $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+      var $SCRIPT_ROOT = {{ request script_root|tojson|safe }};
     </script>
     
     <script type="text/javascript">
@@ -58,6 +53,8 @@
     </script>
     
     <script type="text/javascript">
+        
+    
       $(function() {
         $(".btn btn-primary btn-sm pull-right").click(function() {
              $.ajax({
@@ -74,6 +71,7 @@
             });     
         });
       });
+   
     </script>
     
     <script type="text/javascript">
@@ -179,7 +177,7 @@
 
     <!-- Javascript/JQuery (yeah, i know, it's better to put it in it's own file) -->
 
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
+    <script type="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
         
     <script type="text/javascript">
 
