@@ -4,7 +4,7 @@ It's time to make Twitter great again.
 # Installation
 To install, simply use `pip`:
 
-## CLARIFAI
+## WATSON DEVELOPER CLOUD
 ```bash
-$ pip install clarifai
+$ pip install watson_developer_cloud
 ```

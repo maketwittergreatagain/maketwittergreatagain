@@ -65,5 +65,3 @@ target/
 *~
 *#
 .DS_Store
-secret.py
-app.config
